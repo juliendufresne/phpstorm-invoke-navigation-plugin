@@ -1,0 +1,17 @@
+<idea-plugin>
+    <id>me.dfrsn.invoke-navigation</id>
+    <name>PHP __invoke Navigation</name>
+    <vendor>dfrsn</vendor>
+    <description><![CDATA[
+        Ctrl/Cmd+Click (Go to Declaration) on the parentheses of a call to an invokable object,
+        such as <code>($this-&gt;handler)($args)</code> or <code>$callback($args)</code>,
+        navigates to the <code>__invoke()</code> method of the object's class.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.jetbrains.php</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <gotoDeclarationHandler implementation="me.dfrsn.invokenav.InvokeGotoDeclarationHandler"/>
+    </extensions>
+</idea-plugin>
